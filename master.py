@@ -906,8 +906,12 @@ global lvl
 lvl = 1
 gameWon = False
 
+print ('Game Loading...')
+
+time.sleep(2)
 
 if lvl == 1:
+    #initialization for level 1
     P = refPlayer('win',0,0)
     M2 = maze(lvl)
     P = Player(M2.w, 500, 550)
@@ -915,6 +919,7 @@ if lvl == 1:
     monster1 = Monster(25,373,M2.w,'explore')
     monster2 = Monster(200,25,M2.w,'explore',g.Point(300,300))
 
+    #control loop level 1
     key = None
     while key != 'q':
         key = M2.w.checkKey()
@@ -931,13 +936,14 @@ if lvl == 1:
     M2.w.close()
 
 if lvl == 2:
+    #initialization for level 2
     M2 = maze(lvl)
     P = Player(M2.w, 575, 600)
     H = Health(M2.w, 0, 690)
     monster1 = Monster(25,373,M2.w,'explore')
     monster2 = Monster(725,373,M2.w,'wait',g.Point(300,300))
     monster3 = Monster(475,25,M2.w,'patrol',g.Point(475,226))
-
+    #control loop level 2
     key = None
     while key != 'q':
         key = M2.w.checkKey()
@@ -954,6 +960,7 @@ if lvl == 2:
     M2.w.close()
 
 if lvl == 3:
+    #initialization for level 2
     M2 = maze(lvl)
     P = Player(M2.w, 775, 600)
     H = Health(M2.w, 0, 690)
@@ -961,7 +968,7 @@ if lvl == 3:
     monster2 = Monster(925,423,M2.w,'chase')
     monster3 = Monster(575,25,M2.w,'explore')
     monster4 = Monster(75,100,M2.w,'patrol',g.Point(301,100))
-
+    #control loop level 3
     key = None
     while key != 'q':
         key = M2.w.checkKey()
@@ -980,5 +987,7 @@ if lvl == 3:
 
 if gameWon:
     print ('Congratulations! You won!')
+    time.sleep(1)
 else:
     print ('Better luck next time!')
+    time.sleep(1)
