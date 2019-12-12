@@ -223,7 +223,7 @@ class Player:
         distY = self.body.getCenter().getY() - other.body.getCenter().getY()
         totDist = math.sqrt((distX**2)+(distY**2))
         #((distX**2)+(distY**2))**(1/2)
-        if totDist <= other.radius + Player.playerRadius:
+        if totDist <= other.radius + self.playerRadius:
             self.body.move(0, 0)
 
     #if player_collision:
